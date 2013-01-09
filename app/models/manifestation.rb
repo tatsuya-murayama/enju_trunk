@@ -95,7 +95,7 @@ class Manifestation < ActiveRecord::Base
     string :language do
       language.try(:name)
     end
-    string :item_identifier, :multiple => true do
+    text :item_identifier do
       if series_statement.try(:periodical)  # 雑誌の場合
         [series_statement.manifestations.map{ |manifestation| [manifestation.items.collect(&:item_identifier)] }].flatten.compact
       else
