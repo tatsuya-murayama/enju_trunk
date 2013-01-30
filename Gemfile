@@ -23,7 +23,7 @@ gem 'enju_subject', '~> 0.1.0.pre4'
 gem "jpp_customercode_transfer", "~> 0.0.2"
 
 # special gem here.
-# gem 'enju_xxx', :git => 'https://xxx@github.com/'
+gem 'enju_jma', :git => 'https://github.com/MiraitSystems/enju_jma.git'
 
 #
 platforms :ruby do
