@@ -69,11 +69,13 @@ $(function(){
         </td>
       </tr>
     <% end %>
+<% if false %>
     <tr>
       <td><label><%= t('page.number_of_pages') -%>:</label></td>
         <td><%= t('advanced_search.from') -%> <%= text_field_tag 'number_of_pages_at_least', nil, :size => 5 -%>
           <%= t('advanced_search.to') -%> <%= text_field_tag 'number_of_pages_at_most', nil, :size => 5 -%></td>
     </tr>
+<% end %>
     <% if SystemConfiguration.get('manifestation.manage_item_rank') %>
       <% if user_signed_in? and current_user.has_role?('Librarian') %>
         <tr>
@@ -85,19 +87,6 @@ $(function(){
         </tr>
       <% end %>
     <% end %>
-    <!--
-    <tr>
-      <td><label><%= t('page.holding_library') -%>:</label></td>
-      <td>
-        <select id="library_top" name="library">
-          <option value=""><%= t('advanced_search.all_libraries') -%></option>
-          <%- @libraries.each do |library| -%>
-            <option value="<%= library.name -%>"><%= library.display_name.localize -%></option>
-          <%- end -%>
-        </select>
-      </td>
-    </tr>
-    -->
     <tr>
       <td></td>
       <td>
